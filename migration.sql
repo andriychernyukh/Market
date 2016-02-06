@@ -1,3 +1,10 @@
+-- Create database
+CREATE DATABASE IF NOT EXISTS `market`
+ DEFAULT CHARACTER SET = 'utf8' DEFAULT COLLATE 'utf8_general_ci';
+
+
+
+USE `market`;
 
 -- Table structure for table `product`
 --
@@ -16,8 +23,3 @@ ALTER TABLE `product`
 
 ALTER TABLE `product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
-
-
--- create database user 
-CREATE USER 'market_admin'@'localhost' IDENTIFIED BY '***';GRANT ALL PRIVILEGES ON *.* TO 'market_admin'@'localhost' IDENTIFIED BY '***' REQUIRE NONE WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;GRANT ALL PRIVILEGES ON `market`.* TO 'market_admin'@'localhost';
