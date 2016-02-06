@@ -1,8 +1,33 @@
 <?php
+include_once 'connect.php';
 
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
+$query = "SELECT * FROM product";
+$prodList = array();
+if ($result = $connect->query($query)) {
+    while ($row = $result->fetch_object()) {
+        $prodList[] = $row;
+    }
+}
+$connect->close();
+?>
+<?php
+if (!empty($prodList)) {
+    echo '<ol>';
+    foreach ($prodList as $product) {
+        ?>
+        <li>
+            <?php
+            echo "$product->title $product->price $product->quantity";
+            ?>
+            <a href="edit.php?productId=<?= $product->id; ?>">[Edit]</a>
+            <a href="delete.php?productId=<?= $product->id; ?>">[Delete]</a>
+        </li>
+        <?php
+    }
+    echo '</ol>';
+} else {
+    echo "<h4>No products found!</h4>";
+}
+?>
+<a href="add.php">[Add new product]</a>
