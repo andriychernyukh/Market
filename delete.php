@@ -17,11 +17,11 @@ if (!empty($_GET['productId'])) {
         <?php
     }
 
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['btnYes'])) {
-        
-        $query = "DELETE FROM product WHERE id={$_POST['id']};";
-        $res = $connect->query($query);
-
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        if (isset($_POST['btnYes'])) {
+            $query = "DELETE FROM product WHERE id={$_POST['id']};";
+            $res = $connect->query($query);
+        }
         header("Location: /");
         return;
     }
