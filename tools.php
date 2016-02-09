@@ -1,19 +1,10 @@
 <?php
-
+//connect.php
 class Product {
 
-    public $id;
-    public $title;
-    public $price;
-    public $quantity;
+    
 
-    function initProd($title, $price, $quantity) {
-        $this->title=$title;
-        $this->price=$price;
-        $this->quantity=$quantity;
-    }
-
-    function findAll($connect) {
+       function findAll($connect) {
         $query = "SELECT * FROM product";
         $prodList = array();
         if ($result = $connect->query($query)) {
