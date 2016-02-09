@@ -1,10 +1,9 @@
 <?php
-//connect.php
+include_once 'connect.php';
+
 class Product {
 
-    
-
-       function findAll($connect) {
+    function findAll($connect) {
         $query = "SELECT * FROM product";
         $prodList = array();
         if ($result = $connect->query($query)) {

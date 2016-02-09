@@ -2,7 +2,7 @@
 include 'layout/_header.php';
 if (!empty($_GET['productId'])) {
 
-    include_once 'connect.php';
+  
     include_once 'tools.php';
 
     //$query = "SELECT * FROM product WHERE id={$_GET['productId']};";
