@@ -1,0 +1,20 @@
+body {
+    background: #fff333;
+}
+.header{
+background:#33ff33;
+width: 70%;
+height: 100px;
+margin: 0 auto;
+} 
+.content{
+background:oldlace;
+width: 70%;
+height:100%;
+top:100px;
+margin: 0 auto;
+}
+.label{
+    width: 100px;
+   
+}

@@ -1,14 +1,15 @@
 <?php
 include_once 'connect.php';
+include_once 'tools.php';
 
-
-$query = "SELECT * FROM product";
-$prodList = array();
-if ($result = $connect->query($query)) {
-    while ($row = $result->fetch_object()) {
-        $prodList[] = $row;
-    }
-}
+//$query = "SELECT * FROM product";
+//$prodList = array();
+//if ($result = $connect->query($query)) {
+  //  while ($row = $result->fetch_object()) {
+    //    $prodList[] = $row;
+    //}
+$product= new Product();
+$prodList= $product->findAll($connect);
 $connect->close();
 ?>
 <?php
