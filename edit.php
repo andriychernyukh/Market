@@ -1,9 +1,7 @@
 <?php
 include 'layout/_header.php';
+include_once 'tools.php';
 if (!empty($_GET['productId'])) {
-
-  
-    include_once 'tools.php';
 
     //$query = "SELECT * FROM product WHERE id={$_GET['productId']};";
     //if ($result = $connect->query($query)) {
@@ -26,7 +24,6 @@ if (!empty($_GET['productId'])) {
         header("Location: /");
         return;
     }
-    $connect->close();
 } else {
     echo '<h4>Error!</h4>';
 }
