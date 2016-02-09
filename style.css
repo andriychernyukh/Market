@@ -1,6 +1,9 @@
 body {
     background: #fff333;
 }
+img{
+    width: 100%;
+}
 .all-content-wrapper{
     margin: 0 auto;
     width: 1000px;
