@@ -1,13 +1,14 @@
 <?php
 include 'layout/_header.php';
-include_once 'tools.php';
+
 if (!empty($_GET['productId'])) {
 
     //$query = "SELECT * FROM product WHERE id={$_GET['productId']};";
     //if ($result = $connect->query($query)) {
     //  $product = $result->fetch_object();
-
-
+    
+    include_once 'tools.php';
+    
     $prodObj = new Product();
     $product = $prodObj->findById($connect, $_GET['productId']);
     include_once '_form.php';
