@@ -1,5 +1,5 @@
 <?php
-
+include 'layout/_header.php';
 if (!empty($_GET['productId'])) {
 
     include_once 'connect.php';
@@ -20,7 +20,7 @@ if (!empty($_GET['productId'])) {
         //$query = "UPDATE product SET title='{$_POST['title']}', price={$_POST['price']}, quantity={$_POST['quantity']} WHERE id={$_POST['id']};";
         //$res = $connect->query($query);
         $prodObjUpd=new Product();
-        $prodObjUpd->initProd($_POST['title'], $_POST['price'], $_POST['quantity']);
+        
         $prodObjUpd->save($_POST['id']);
   
         header("Location: /");
@@ -30,7 +30,7 @@ if (!empty($_GET['productId'])) {
 } else {
     echo '<h4>Error!</h4>';
 }
+include 'layout/_footer.php';
 
-
-
+?>
 

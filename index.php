@@ -1,8 +1,8 @@
 <?php
 
-include 'Layout/_header.php';
+include 'layout/_header.php';
 include 'list.php';
-include 'Layout/_footer.php';
+include 'layout/_footer.php';
 ?>
 
 

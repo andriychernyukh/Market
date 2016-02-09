@@ -1,4 +1,5 @@
 <?php
+include 'layout/_header.php';
 if (!empty($_GET['productId'])) {
 
     include_once 'connect.php';
@@ -29,3 +30,5 @@ if (!empty($_GET['productId'])) {
 } else {
     echo '<h4>Error: No product to delete</h4>';
 }
+include 'layout/_footer.php';
+?>
