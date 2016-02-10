@@ -12,7 +12,7 @@
                 
                 <div class="logo">
                     <a href="/">
-                        <img src="images/logo.jpg" alt="sorry, no image">
+                        <img src="images/logo.gif" alt="sorry, no image">
                     </a>
                 </div>
                 <div class="title">
