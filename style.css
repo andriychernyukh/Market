@@ -4,6 +4,15 @@ body {
 img{
     width: 100%;
 }
+.logo{
+    width: 20%;
+    float: left;
+}
+.title{
+    padding: 30px 30px;
+    text-align: center;
+    font-size: 30px;
+}
 .all-content-wrapper{
     margin: 0 auto;
     width: 1000px;
