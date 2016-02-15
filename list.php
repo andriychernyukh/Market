@@ -20,8 +20,8 @@ if (!empty($prodList)) {
             <?php
             echo "$product->title $product->price $product->quantity";
             ?>
-            <a href="edit.php?productId=<?= $product->id; ?>">[Edit]</a>
-            <a href="delete.php?productId=<?= $product->id; ?>">[Delete]</a>
+            <a class="a-edit" href="edit.php?productId=<?= $product->id; ?>">Edit</a>
+            <a class="a-del" href="delete.php?productId=<?= $product->id; ?>">Delete</a>
         </li>
         <?php
     }
@@ -30,4 +30,4 @@ if (!empty($prodList)) {
     echo "<h4>No products found!</h4>";
 }
 ?>
-<a href="add.php">[Add new product]</a>
+<a class="a-edit" href="add.php">Add new product</a>

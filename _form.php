@@ -15,5 +15,5 @@
         <input type='text' name='quantity' id='quantity' value="<?php echo (empty($product) ? '' : $product->quantity); ?>"/>
     </label>
     <br/>
-    <input type=submit name='save' value='Save'>
+    <input class="button-yes" type=submit name='save' value='Save'>
 </form>

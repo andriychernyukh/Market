@@ -1,4 +1,5 @@
 <?php
+
 include_once 'connect.php';
 
 class Product {
@@ -24,8 +25,8 @@ class Product {
         }
     }
 
-    function save($id) {
-        if (isset($id)) {
+    function save($id, $connect) {
+        if (!empty($id)) {
             $query = "UPDATE product SET title='{$_POST['title']}', price={$_POST['price']}, quantity={$_POST['quantity']} WHERE id=$id;";
             $res = $connect->query($query);
         } else {
@@ -34,8 +35,9 @@ class Product {
         }
     }
 
-    function delete() {
-        
+    function delete($id, $connect) {
+        $query = "DELETE FROM product WHERE id=$id;";
+        $res = $connect->query($query);
     }
 
 }
