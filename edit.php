@@ -8,17 +8,25 @@ if (!empty($_GET['productId'])) {
 
     $prodObj = new Product();
     $product = $prodObj->findById($connect, $_GET['productId']);
-    
-    include_once '_form.php';
+
 
     if (isset($_POST['save'])) {
-        $prodObj->save($_POST['id'], $connect);
-        header("Location: /");
-        return;
+        $productValidator = new ProductValidator();
+        $validateResult = $productValidator->validate($_POST);
+
+        if ($validateResult['isValid']) {
+            $prodObj = new Product();
+            $prodObj->save($_POST['id'], $validateResult['data'], $connect);
+            header("Location: /");
+            return;
+        }
     }
 } else {
     echo '<h4>Error!</h4>';
 }
+
+include_once '_form.php';
+
 include 'layout/_footer.php';
 ?>
 

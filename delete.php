@@ -9,12 +9,12 @@ if (!empty($_GET['productId'])) {
     $product = $prodObj->findById($connect, $_GET['productId']);
 
     if (!empty($product)) {
-                ?>
+        ?>
         <h4> Are you sure want to delete this product?</h4>
         <form action='' method=post>
             <input type="hidden" name="id" id="id" value="<?php echo (empty($product) ? '' : $product->id); ?>"/>
-            <input class="button-yes" type=submit name='btnYes' value='Yes'>
-            <input   class="button-no" type=submit name='btnNo' value='No'>
+            <input class="button button-yes" type=submit name='btnYes' value='Yes'>
+            <input class="button button-no" type=submit name='btnNo' value='No'>
 
         </form>
         <?php
