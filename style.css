@@ -28,6 +28,15 @@ input[type=text] {
     background-color: #3CBC8D;
     color: white;
 }
+select{
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+}
 ul, ol{
 
 }
@@ -134,6 +143,7 @@ ul, ol{
 .product-list .item .title,
 .product-list .item .price,
 .product-list .item .quantity,
+.product-list .item .category-title,
 .product-list .item .controls{
     display:inline-block;
 }
@@ -142,13 +152,16 @@ ul, ol{
 
 }
 .product-list .item .title{
-    width: 45%;
+    width: 30%;
 }
 .product-list .item .price{
     width: 10%;
 }
 .product-list .item .quantity{
-    width: 10%;
+    width: 5%;
+}
+.product-list .item .category-title{
+    width: 20%;
 }
 .product-list .item .controls{
     width: 25%;

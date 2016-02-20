@@ -15,10 +15,11 @@ if (!empty($_GET['productId'])) {
         $validateResult = $productValidator->validate($_POST);
 
         if ($validateResult['isValid']) {
-            $prodObj = new Product();
             $prodObj->save($_POST['id'], $validateResult['data'], $connect);
             header("Location: /");
             return;
+        } else {
+            Product::populateFromArray($product, $validateResult['data']);
         }
     }
 } else {

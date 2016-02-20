@@ -9,18 +9,17 @@ include_once 'tools.php';
 //}
 $product = new Product();
 $prodList = $product->findAll($connect);
-$connect->close();
+//$connect->close();
 ?>
 <?php
 if (!empty($prodList)) {
     echo '<ul class="product-list">';
-    $index=1;
+    $index = 1;
     foreach ($prodList as $product) {
-        
-        $itemClass=(($index%2===0) ? 'item-even' : 'item-odd');
-                
+
+        $itemClass = (($index % 2 === 0) ? 'item-even' : 'item-odd');
         ?>
-        <li class="item <?php echo $itemClass;?>">
+        <li class="item <?php echo $itemClass; ?>">
             <div class="index">
                 <?php
                 echo $index++;
@@ -41,13 +40,18 @@ if (!empty($prodList)) {
                 echo $product->quantity;
                 ?>  
             </div>
+            <div class="category-title">
+                <?php
+                $category = new Category();
+                echo $category->findById($connect, $product->category_id)->title;
+                ?>  
+            </div>
             <div class="controls">
                 <a class="a-edit" href="edit.php?productId=<?= $product->id; ?>">Edit</a>
                 <a class="a-del" href="delete.php?productId=<?= $product->id; ?>">Delete</a>
             </div>
         </li>
         <?php
-        
     }
     echo '</ul>';
 } else {
